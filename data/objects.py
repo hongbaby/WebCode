@@ -1,8 +1,3 @@
-class Base(object):
-    def __repr__(self):
-        return "%r" % self.__dict__
-
-
-class Container(Base):
+class Container(object):
     """Class to contain runtime attributes"""
     pass

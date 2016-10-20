@@ -1,7 +1,8 @@
-from settings import set_logger
-from selenium import webdriver
 from selenium.webdriver.remote.webdriver import WebDriver
+
 from data.objects import Container
+from selenium_helper import SeleniumHelper
+from settings import set_logger
 
 logger = set_logger()
 
@@ -10,15 +11,9 @@ instance = Container()
 
 def initialize_env(func):
     def wrapper(*args):
-        if len(args) != 0:
-            if hasattr(args[0], 'browser'):
-                browser = getattr(args[0], 'browser')
-            else:
-                browser = webdriver.Chrome()
-        else:
-            browser = webdriver.Chrome()
+        browser = SeleniumHelper().open_browser()
 
-        assert isinstance(browser, WebDriver)
+        instance.browser = browser
         func(*args)
     return wrapper
 
@@ -28,4 +23,3 @@ def get_browser():
         return instance.browser
     else:
         raise EnvironmentError("You must initialize business at first!")
-
