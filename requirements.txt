@@ -1,0 +1,20 @@
+#
+##### Python package requirements for smart tests ####
+##### Reference: https://pip.pypa.io/en/stable/reference/pip_install/#requirement-specifiers
+#
+arrow
+astroid
+configparser
+isort
+lazy-object-proxy
+pytz
+pip
+psutil
+pymssql
+pyodbc
+pytest
+requests
+selenium
+simplejson
+setuptools
+SQLAlchemy
