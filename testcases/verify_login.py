@@ -8,4 +8,3 @@ class VerifyLogin(FrontendTestCase):
     @initialize_env
     def run_test(self):
         verify_login("stest42410", "1")
-        self.close_web_browser()
