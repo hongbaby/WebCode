@@ -8,6 +8,4 @@ class VerifyLogin(FrontendTestCase):
     @initialize_env
     def run_test(self):
         verify_login("stest42410", "1")
-
-if __name__ == '__main__':
-    VerifyLogin().run_test()
+        self.close_web_browser()
